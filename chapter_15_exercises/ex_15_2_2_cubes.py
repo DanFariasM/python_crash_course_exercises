@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 # Plotting 5000 cubes.
-x_values = range(1, 500001)
+x_values = range(1, 5001)
 y_values = [x**3 for x in x_values]
 
 plt.style.use("seaborn")
