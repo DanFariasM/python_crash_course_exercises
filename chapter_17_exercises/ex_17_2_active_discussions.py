@@ -50,8 +50,6 @@ for submission_dict in submission_dicts:
     print(f"Comments: {submission_dict['comments']}")
     discussion_comments.append(submission_dict['comments'])
 
-
-
 # Make the visualization.
 data = [{
     "type": "bar",
