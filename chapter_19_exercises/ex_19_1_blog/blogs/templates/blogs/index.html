@@ -2,3 +2,15 @@
 
 <p>The Blog keeps track of all entries showing the title,text and date
  posted.</p>
+
+ <p>Posts</p>
+
+ <ul>
+    {% for post in posts %}
+        <li>
+            <p>{{ post.title }} - {{ post.date_added|date:"M d, Y H;i" }}</p>
+            <p>{{ post.text|linebreaks }} </p>
+        </li>
+    {% empty %}
+        <li>No posts have been added yet.</li>
+    {% endfor %}
