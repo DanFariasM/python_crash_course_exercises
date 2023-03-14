@@ -1,0 +1,9 @@
+<a href="{% url 'blogs:index' %}">Back to main page</a>
+
+<p>Edit post:</p>
+
+<form action="{% url 'blogs:edit_post' post.id %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button name="submit">Save Changes</button>
+</form>
