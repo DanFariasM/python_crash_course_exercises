@@ -1,21 +1,27 @@
-<p>Blog</p>
+{% extends "blogs/base.html" %}
 
-<p>The Blog keeps track of all entries showing the title,text and date
- posted.</p>
+{% block content %}
 
- <a href="{% url 'blogs:new_post' %}">Add a new post</a>
+    <p>Blog</p>
 
- <p>Posts</p>
+    <p>The Blog keeps track of all entries showing the title,text and date
+     posted.</p>
 
- <ul>
-    {% for post in posts %}
-        <li>
-            <p>{{ post.title }} - {{ post.date_added|date:"M d, Y H:i" }}</p>
-            <p>{{ post.text|linebreaks }} </p>
-            <p>
-                <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
-            </p>
-        </li>
-    {% empty %}
-        <li>No posts have been added yet.</li>
-    {% endfor %}
+     <a href="{% url 'blogs:new_post' %}">Add a new post</a>
+
+     <p>Posts</p>
+
+     <ul>
+        {% for post in posts %}
+            <li>
+                <p>{{ post.title }} - {{ post.date_added|date:"M d, Y H:i" }}</p>
+                <p>{{ post.text|linebreaks }} </p>
+                <p>
+                    <a href="{% url 'blogs:edit_post' post.id %}">Edit post</a>
+                </p>
+            </li>
+        {% empty %}
+            <li>No posts have been added yet.</li>
+        {% endfor %}
+
+{% endblock content %}
